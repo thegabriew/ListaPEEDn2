@@ -1,0 +1,23 @@
+#Versão sem recursividade 
+
+class Arvore:
+	def __init__(self):
+		self.root = None
+		
+	def Inserir(self, data):
+
+		no = Node(data)
+
+  	if self.root is None:
+  		self.root = no 
+  
+  	else:
+  		current = self.root
+  
+  	while True:
+  		if data < current.data:
+  			if current.left is None:
+  				current.left = no 
+  
+  			elif current.right is None:
+  				current.right = no 
