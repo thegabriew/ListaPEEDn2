@@ -1,0 +1,24 @@
+ def percorrer_pre_ordem(self):
+        if self.raiz is None:
+            print('A árvore está vazia.')
+        else:
+            self.percorrer_pre_ordem_recursivo(self.raiz)
+
+    def percorrer_pre_ordem_recursivo(self, no):
+        if no is not None:
+            print(no.valor, end=' - ')
+            self.percorrer_pre_ordem_recursivo(no.esq)
+            self.percorrer_pre_ordem_recursivo(no.dir)
+            
+
+arvore = Percorrer()
+arvore.inserir_em_nivel(4)
+arvore.inserir_em_nivel(2)
+arvore.inserir_em_nivel(6)
+arvore.inserir_em_nivel(1)
+arvore.inserir_em_nivel(3)
+arvore.inserir_em_nivel(5)
+arvore.inserir_em_nivel(7)
+
+arvore.percorrer_pre_ordem()
+print()
