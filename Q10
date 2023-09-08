@@ -1,0 +1,20 @@
+class Node:
+
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+class Arvore:
+
+    def __init__ (self):
+            root.root = None
+    
+    def calc_max(root):
+        if root is None:
+            return 0
+    
+        max_left = calc_max(root.left)
+        max_right = calc_max(root.right)
+    
+        return max(root.data, max_left, max_right)
