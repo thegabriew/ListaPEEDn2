@@ -1,0 +1,25 @@
+  def percorrer_niveis(self):
+        if self.raiz is None:
+            print('A árvore está vazia.')
+            return
+        
+        nos = [self.raiz]
+        while nos:
+            no_atual = nos.pop(0)
+            print(no_atual.valor, end=' <-> ')
+            if no_atual.esq:
+                nos.append(no_atual.esq)
+            if no_atual.dir:
+                nos.append(no_atual.dir)
+
+arvore = Percorrer()
+arvore.inserir_em_nivel(4)
+arvore.inserir_em_nivel(2)
+arvore.inserir_em_nivel(6)
+arvore.inserir_em_nivel(1)
+arvore.inserir_em_nivel(3)
+arvore.inserir_em_nivel(5)
+arvore.inserir_em_nivel(7)
+
+arvore.percorrer_niveis()
+print()
