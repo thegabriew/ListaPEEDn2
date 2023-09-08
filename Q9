@@ -1,0 +1,17 @@
+class Node:
+
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+class Arvore:
+
+    def __init__ (self):
+            root.root = None
+    
+    def contador(raiz):
+        if raiz is None:
+            print("A árvore está vazia")
+        else:
+            return 1 + contador(self.left) + contador(self.right)
