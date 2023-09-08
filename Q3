@@ -1,0 +1,64 @@
+class Node:
+	self.data = data
+	self.right = None
+	self.left = None
+
+class Arvore:
+    def __init__(self):
+        self.root = None
+
+    def Inserir(self, data):
+        no = Node(data)
+        
+        if self.root is None:
+            self.root = no
+        else:
+            current = self.root
+            while True:
+                if data < current.data:
+                    if current.left is None:
+                        current.left = no
+                       
+                elif valor > current.data:
+                    if current.right is None:
+                        current.right = no
+                      
+
+    def exibir(self):
+        self.exibir_recursivo(self.root)
+
+    def exibir_recursivo(self, no):
+        if no:
+            self.exibir_recursivo(no.left)
+            print(no.data)
+            self.exibir_recursivo(no.right)
+
+    def contem(self, data):
+        return self._contem_recursivo(self.root, data)
+
+    def _contem_recursivo(self, no, data):
+        if no is None:
+            return False
+        if no.data == data:
+            return True
+        if data < no.data:
+            return self._contem_recursivo(no.left, data)
+        else:
+            return self._contem_recursivo(no.right, data)
+            
+#Adicionando valores a árvore
+arvore = Arvore()
+arvore.inserir(50)
+arvore.inserir(30)
+arvore.inserir(70)
+arvore.inserir(20)
+arvore.inserir(40)
+
+print("Árvore em ordem:")
+arvore.exibir()
+
+numero_procurado = int(input("Digite um número para procurar na árvore: "))
+if arvore.contem(numero_procurado):
+    print(f"O número {numero_procurado} está na árvore.")
+else:
+    print(f"O número {numero_procurado} não está na árvore.")
