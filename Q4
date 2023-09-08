@@ -1,0 +1,9 @@
+ def altura(self):
+        return self._altura_recursivamente(self.root)
+
+    def _altura_recursivamente(self, node):
+        if node is None:
+            return 0
+        left_height = self._altura_recursivamente(node.left)
+        right_height = self._altura_recursivamente(node.right)
+        return max(left_height, right_height) + 1
