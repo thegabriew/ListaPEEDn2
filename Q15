@@ -1,0 +1,8 @@
+def get_children(node):
+    children = []
+    if node:
+        if node.left:
+            children.append(node.left)
+        if node.right:
+            children.append(node.right)
+    return children
