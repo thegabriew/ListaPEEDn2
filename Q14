@@ -1,0 +1,16 @@
+def path(root, target):
+    if root is None:
+        return None
+
+    if root.data == target:
+        return [root.data]
+
+    left_path = path(root.left, target)
+    if left_path:
+        return [root.data] + left_path
+
+    right_path = path(root.right, target)
+    if right_path:
+        return [root.data] + right_path
+
+    return None
