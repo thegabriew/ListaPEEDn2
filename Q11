@@ -1,0 +1,22 @@
+def is_valid(root):
+    #float('inf') verifica o maior ou menor nº possível
+
+    return _is_valid(root, float('-inf'), float('inf'))
+
+def _is_valid(node, min_val, max_val):
+    if node is None:
+        return True
+
+    if not (min_val < node.data < max_val):
+        return False
+
+
+    return (
+        _is_valid(node.left, min_val, node.data) and
+        _is_valid(node.right, node.data, max_val)
+    ).
+
+
+
+
+
