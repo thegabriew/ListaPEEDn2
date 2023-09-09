@@ -1,0 +1,14 @@
+def _level_nodes(node, level, result):
+    if node is None:
+        return
+
+    if level == 0:
+        result.append(node.data)
+    else:
+        _level_nodes(node.left, level - 1, result)
+        _level_nodes(node.right, level - 1, result)
+
+def level_nodes(root, level):
+    result = []
+    _level_nodes(root, level, result)
+    return result
